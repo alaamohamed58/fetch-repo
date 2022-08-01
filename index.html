@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      list-style: none;
+    }
+    *:focus {
+      outline: none;
+    }
+    .container {
+      width: 500px;
+      margin: 50px auto;
+
+      text-align: center;
+      padding: 30px;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    form > * {
+      padding: 8px;
+    }
+    input {
+      border: 1px solid #ddd;
+      width: calc(100% - 60px);
+    }
+    button {
+      text-shadow: 0px 0px 1px #bf4c28;
+      width: 60px;
+      border: none;
+      display: inline-block;
+      border-radius: 50em;
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      will-change: transform, filter;
+      transform-style: preserve-3d;
+      transition: all 0.3s ease-out;
+      background: linear-gradient(
+        180deg,
+        #fa7e29 0%,
+        #f6682f 80%,
+        #f6682f 100%
+      );
+      cursor: pointer;
+    }
+    button:hover {
+      transform: scale(0.9);
+    }
+
+    .output {
+      background-color: #f9f9f9;
+      margin-top: 30px;
+      padding: 30px;
+      text-align: left;
+      max-height: 350px;
+      overflow-y: scroll;
+    }
+    li {
+      padding: 10px;
+      background: linear-gradient(
+        180deg,
+        #fa7e29 0%,
+        #f6682f 80%,
+        #f6682f 100%
+      );
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    #loading {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 10px solid #ddd;
+      border-right-color: #777;
+      margin: auto;
+      animation: loading 0.8s infinite ease-in;
+    }
+    @keyframes loading {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <form action="">
+        <input type="text" id="name" placeholder="User Name" />
+        <button type="submit">Search</button>
+      </form>
+      <div class="output">
+        <ul></ul>
+      </div>
+    </div>
+  </body>
+
+  <script src="app.js"></script>
+</html>
